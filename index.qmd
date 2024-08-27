@@ -1,0 +1,23 @@
+---
+title: "quarto-hover"
+format:
+    html: 
+      self-contained: true
+---
+
+Here is an simple R plot which will be displayed in the hover preview.
+```{r}
+#| label: fig-base-plot
+plot(1:10)
+```
+
+Here is an interactive plot which won't be displayed in the hover preview.
+```{r}
+#| label: fig-plotly
+#| message: false
+library(plotly)
+plot_ly(x = 1:10, y = 1:10, z = 10:1, type = 'scatter3d', mode = 'markers')
+```
+
+When you hover over the link to @fig-base-plot you see a preview, but not for @fig-plotly. 
+
